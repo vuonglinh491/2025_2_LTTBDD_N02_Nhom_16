@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:student_study_planner_app/rate/emoticon.dart';
+import 'package:student_study_planner_app/util/courses.dart';
+import 'package:student_study_planner_app/util/emoticon.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -137,7 +138,7 @@ class _HomeState extends State<Home> {
                         height: 8,
                       ),
                       Text(
-                        'Buồn ngủ',
+                        'Mệt mỏi',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -149,13 +150,13 @@ class _HomeState extends State<Home> {
                   Column(
                     children: [
                       CamXuc(
-                        camxuc: '😵',
+                        camxuc: '😣',
                       ),
                       SizedBox(
                         height: 8,
                       ),
                       Text(
-                        'Mất tập trung',
+                        'Áp lực',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -173,7 +174,7 @@ class _HomeState extends State<Home> {
                         height: 8,
                       ),
                       Text(
-                        'Bình thường',
+                        'Bình ổn',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -181,17 +182,17 @@ class _HomeState extends State<Home> {
                     ],
                   ),
 
-                  //Rất tốt
+                  //Khá tốt
                   Column(
                     children: [
                       CamXuc(
-                        camxuc: '😀',
+                        camxuc: '🔥',
                       ),
                       SizedBox(
                         height: 8,
                       ),
                       Text(
-                        'Rất tốt',
+                        'Hăng say',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -203,13 +204,13 @@ class _HomeState extends State<Home> {
                   Column(
                     children: [
                       CamXuc(
-                        camxuc: '🚀',
+                        camxuc: '💪',
                       ),
                       SizedBox(
                         height: 8,
                       ),
                       Text(
-                        'Tập trung',
+                        'Tự tin',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -248,60 +249,41 @@ class _HomeState extends State<Home> {
                 ),
 
                 // Xem danh sách nd
-                Container(
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Expanded(
+                  child: ListView(
                     children: [
-
-                      Row(children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Container(
-                            padding: EdgeInsets.all(16),
-                            color: Colors.orange,
-                            child: Icon(
-                              Icons.menu_book,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Lập trình cho thiết bị di động',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              '2 bài tập',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],),
-                    
-                      Icon(Icons.more_horiz),
+                      KhoaHoc(
+                        BieuTuong: Icons.phone_android,
+                        TenKhoaHoc: 'Lập trình cho thiết bị di động',
+                        SoBaiTap: 5,
+                        MauSac: Colors.blueAccent,
+                      ),
+                      KhoaHoc(
+                        BieuTuong: Icons.account_tree,
+                        TenKhoaHoc: 'Phân tích và thiết kế phần mềm',
+                        SoBaiTap: 56,
+                        MauSac: Colors.deepPurple,
+                      ),
+                      KhoaHoc(
+                        BieuTuong: Icons.touch_app,
+                        TenKhoaHoc: 'Giao diện người máy',
+                        SoBaiTap: 12,
+                        MauSac: Colors.orange,
+                      ),
+                      KhoaHoc(
+                        BieuTuong: Icons.functions,
+                        TenKhoaHoc: 'Tối ưu hóa',
+                        SoBaiTap: 9,
+                        MauSac: Colors.redAccent,
+                      ),
+                      KhoaHoc(
+                        BieuTuong: Icons.menu_book,
+                        TenKhoaHoc: 'Tiếng anh 2',
+                        SoBaiTap: 5,
+                        MauSac: Colors.teal,
+                      ),
                     ],
-                  )
+                  ),
                 ),
               ],),
             ),
