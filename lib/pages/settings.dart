@@ -263,6 +263,7 @@ class _SettingsState extends State<Settings> {
               ),
             ),
 
+            SizedBox(height: 25),
             // ================= ĐÁNH GIÁ =================
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
