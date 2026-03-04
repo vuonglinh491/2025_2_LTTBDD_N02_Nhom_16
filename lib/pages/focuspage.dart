@@ -1,24 +1,20 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class Add extends StatefulWidget {
-  const Add({super.key});
+class FocusPage extends StatefulWidget {
+  const FocusPage({super.key});
 
   @override
-  State<Add> createState() => _AddState();
+  State<FocusPage> createState() => _FocusPageState();
 }
 
-class _AddState extends State<Add> {
-  // ================= BIẾN =================
-
-  int totalSeconds = 600; // 10 phút mặc định
+class _FocusPageState extends State<FocusPage> {
+  int totalSeconds = 600;
   int remainingSeconds = 600;
 
   Timer? timer;
   bool isRunning = false;
   bool isPaused = false;
-
-  // ================= HÀM START =================
 
   void startTimer() {
     timer = Timer.periodic(const Duration(seconds: 1), (t) {
@@ -41,8 +37,6 @@ class _AddState extends State<Add> {
     });
   }
 
-  // ================= HÀM PAUSE =================
-
   void pauseTimer() {
     timer?.cancel();
     setState(() {
@@ -51,13 +45,9 @@ class _AddState extends State<Add> {
     });
   }
 
-  // ================= HÀM RESUME =================
-
   void resumeTimer() {
     startTimer();
   }
-
-  // ================= HÀM CANCEL =================
 
   void cancelTimer() {
     timer?.cancel();
@@ -68,16 +58,12 @@ class _AddState extends State<Add> {
     });
   }
 
-  // ================= FORMAT TIME =================
-
   String formatTime(int seconds) {
     int minutes = seconds ~/ 60;
     int secs = seconds % 60;
     return "${minutes.toString().padLeft(2, '0')}:"
         "${secs.toString().padLeft(2, '0')}";
   }
-
-  // ================= BUILD UI =================
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +75,6 @@ class _AddState extends State<Add> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // ===== VÒNG TRÒN =====
           Center(
             child: Stack(
               alignment: Alignment.center,
@@ -117,7 +102,7 @@ class _AddState extends State<Add> {
 
           const SizedBox(height: 40),
 
-          // ===== SLIDER CHỈNH THỜI GIAN =====
+          // chỉnh tgian
           if (!isRunning && !isPaused)
             Column(
               children: [
@@ -140,7 +125,7 @@ class _AddState extends State<Add> {
 
           const SizedBox(height: 20),
 
-          // ===== NÚT CHỨC NĂNG =====
+          // các nút
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -176,9 +161,6 @@ class _AddState extends State<Add> {
       ),
     );
   }
-
-  // ================= QUAN TRỌNG =================
-  // Hủy timer khi rời màn hình tránh memory leak
 
   @override
   void dispose() {
