@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:student_study_planner_app/pages/add.dart';
+import 'package:student_study_planner_app/pages/focuspage.dart';
 import 'package:student_study_planner_app/pages/home.dart';
 import 'package:student_study_planner_app/pages/schedule.dart';
 import 'package:student_study_planner_app/pages/settings.dart';
@@ -68,7 +68,7 @@ class _TrangChuState extends State<TrangChu> {
     });
   }
 
-  final List<Widget> _page = [Home(), Schedule(), Add(), Tasks(), Settings()];
+  final List<Widget> _page = [Home(), Schedule(), FocusPage(), Tasks(), Settings()];
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +80,8 @@ class _TrangChuState extends State<TrangChu> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Lịch học',
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Lịch học'),
+          BottomNavigationBarItem(icon: Icon(Icons.local_fire_department), label: 'Tập trung'),
           BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Nhiệm vụ'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),
         ],

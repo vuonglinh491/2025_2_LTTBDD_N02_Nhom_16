@@ -19,7 +19,6 @@ class _SettingsState extends State<Settings> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // ================= HEADER =================
             Container(
               padding: const EdgeInsets.only(
                 top: 60,
@@ -53,7 +52,6 @@ class _SettingsState extends State<Settings> {
 
             const SizedBox(height: 20),
 
-            // ================= CARD THÔNG TIN =================
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
@@ -133,7 +131,6 @@ class _SettingsState extends State<Settings> {
 
             const SizedBox(height: 25),
 
-            // ================= CÀI ĐẶT CHUNG =================
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Align(
@@ -180,7 +177,7 @@ class _SettingsState extends State<Settings> {
             ),
 
             const SizedBox(height: 25),
-            // ================= THÔNG TIN NHÀ PHÁT TRIỂN =================
+
             const SizedBox(height: 10),
 
             const Padding(
@@ -207,7 +204,7 @@ class _SettingsState extends State<Settings> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // ===== Sinh viên =====
+                    // sinh vien
                     const Row(
                       children: [
                         Icon(Icons.school_outlined, color: Color(0xff3566D6)),
@@ -240,7 +237,7 @@ class _SettingsState extends State<Settings> {
 
                     const SizedBox(height: 20),
 
-                    // ===== Giảng viên =====
+                    // giảng viên
                     const Row(
                       children: [
                         Icon(Icons.person_outline, color: Color(0xff3566D6)),
@@ -264,7 +261,7 @@ class _SettingsState extends State<Settings> {
             ),
 
             SizedBox(height: 25),
-            // ================= ĐÁNH GIÁ =================
+            // phânf đánh giá
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
@@ -321,7 +318,6 @@ class _SettingsState extends State<Settings> {
 
             const SizedBox(height: 25),
 
-            // ================= VERSION =================
             const Text(
               "Study Planner App\nVersion 1.0.0",
               textAlign: TextAlign.center,

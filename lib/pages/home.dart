@@ -293,18 +293,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-
-// class Home extends StatelessWidget {
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: Text(
-//         'Chào mừng bạn đến với trang chủ',
-//         style: TextStyle(fontSize: 32),
-//       ),
-//     );
-//   }
-// }
