@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class FocusPage extends StatefulWidget {
   const FocusPage({super.key});
@@ -16,6 +17,87 @@ class _FocusPageState extends State<FocusPage> {
   bool isRunning = false;
   bool isPaused = false;
 
+  /// TIME PICKER (DAY - HOUR - MINUTE)
+  void openTimePicker() {
+    int selectedDay = 0;
+    int selectedHour = (totalSeconds % 86400) ~/ 3600;
+    int selectedMinute = (totalSeconds % 3600) ~/ 60;
+
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 300,
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              /// DAY
+              Expanded(
+                child: CupertinoPicker(
+                  itemExtent: 40,
+                  scrollController: FixedExtentScrollController(
+                    initialItem: selectedDay,
+                  ),
+                  onSelectedItemChanged: (value) {
+                    selectedDay = value;
+                  },
+                  children: List.generate(
+                    30,
+                    (index) => Center(child: Text("$index ngày")),
+                  ),
+                ),
+              ),
+
+              /// HOUR
+              Expanded(
+                child: CupertinoPicker(
+                  itemExtent: 40,
+                  scrollController: FixedExtentScrollController(
+                    initialItem: selectedHour,
+                  ),
+                  onSelectedItemChanged: (value) {
+                    selectedHour = value;
+                  },
+                  children: List.generate(
+                    24,
+                    (index) => Center(child: Text("$index giờ")),
+                  ),
+                ),
+              ),
+
+              /// MINUTE
+              Expanded(
+                child: CupertinoPicker(
+                  itemExtent: 40,
+                  scrollController: FixedExtentScrollController(
+                    initialItem: selectedMinute,
+                  ),
+                  onSelectedItemChanged: (value) {
+                    selectedMinute = value;
+                  },
+                  children: List.generate(
+                    60,
+                    (index) => Center(child: Text("$index phút")),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    ).whenComplete(() {
+      int seconds =
+          (selectedDay * 86400) + (selectedHour * 3600) + (selectedMinute * 60);
+
+      setState(() {
+        totalSeconds = seconds;
+        remainingSeconds = seconds;
+      });
+    });
+  }
+
+  /// START TIMER
   void startTimer() {
     timer = Timer.periodic(const Duration(seconds: 1), (t) {
       if (remainingSeconds > 0) {
@@ -37,6 +119,7 @@ class _FocusPageState extends State<FocusPage> {
     });
   }
 
+  /// PAUSE
   void pauseTimer() {
     timer?.cancel();
     setState(() {
@@ -45,10 +128,12 @@ class _FocusPageState extends State<FocusPage> {
     });
   }
 
+  /// RESUME
   void resumeTimer() {
     startTimer();
   }
 
+  /// CANCEL
   void cancelTimer() {
     timer?.cancel();
     setState(() {
@@ -58,10 +143,21 @@ class _FocusPageState extends State<FocusPage> {
     });
   }
 
+  /// FORMAT TIME (DAY : HOUR : MINUTE : SECOND)
   String formatTime(int seconds) {
-    int minutes = seconds ~/ 60;
+    int days = seconds ~/ 86400;
+    int hours = (seconds % 86400) ~/ 3600;
+    int minutes = (seconds % 3600) ~/ 60;
     int secs = seconds % 60;
-    return "${minutes.toString().padLeft(2, '0')}:"
+
+    if (days > 0) {
+      return "$days d ${hours.toString().padLeft(2, '0')}:"
+          "${minutes.toString().padLeft(2, '0')}:"
+          "${secs.toString().padLeft(2, '0')}";
+    }
+
+    return "${hours.toString().padLeft(2, '0')}:"
+        "${minutes.toString().padLeft(2, '0')}:"
         "${secs.toString().padLeft(2, '0')}";
   }
 
@@ -75,6 +171,7 @@ class _FocusPageState extends State<FocusPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          /// TIMER CIRCLE
           Center(
             child: Stack(
               alignment: Alignment.center,
@@ -89,11 +186,20 @@ class _FocusPageState extends State<FocusPage> {
                     color: Colors.blue,
                   ),
                 ),
-                Text(
-                  formatTime(remainingSeconds),
-                  style: const TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
+
+                /// TAP TO CHANGE TIME
+                GestureDetector(
+                  onTap: () {
+                    if (!isRunning) {
+                      openTimePicker();
+                    }
+                  },
+                  child: Text(
+                    formatTime(remainingSeconds),
+                    style: const TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -102,30 +208,7 @@ class _FocusPageState extends State<FocusPage> {
 
           const SizedBox(height: 40),
 
-          // chỉnh tgian
-          if (!isRunning && !isPaused)
-            Column(
-              children: [
-                const Text("Chọn thời gian (phút)"),
-                Slider(
-                  min: 1,
-                  max: 60,
-                  divisions: 59,
-                  value: totalSeconds / 60,
-                  label: "${totalSeconds ~/ 60} phút",
-                  onChanged: (value) {
-                    setState(() {
-                      totalSeconds = value.toInt() * 60;
-                      remainingSeconds = totalSeconds;
-                    });
-                  },
-                ),
-              ],
-            ),
-
-          const SizedBox(height: 20),
-
-          // các nút
+          /// BUTTONS
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
