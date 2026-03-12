@@ -1,47 +1,150 @@
 import 'package:flutter/material.dart';
 
-class Schedule extends StatefulWidget {
+class Schedule extends StatelessWidget {
 
-  @override
-  State<Schedule> createState() => _ScheduleState();
-}
-
-class _ScheduleState extends State<Schedule> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              //chia làm 2 phần cho lịch và nhiệm vụ
-              Container(
-                height: 300,
-                padding: EdgeInsets.all(25),
-                color: Colors.orange,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Lịch học",
+      appBar: AppBar(
+        title: Text(
+          'Lịch học',
+          style: TextStyle(
+            color: Colors.white,
+          )
+        ),
+        backgroundColor: Color(0xff3566D6),
+
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                IconButton(
+                  icon: Icon(Icons.chevron_left),
+                  onPressed: () {},
+                ),
+
+                Text(
+                  'Tháng 3 2026',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                IconButton(
+                  icon: Icon(Icons.chevron_right),
+                  onPressed: () {},
+                ),
+
+              ],
+            ),
+
+            SizedBox(height: 8),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Chủ nhật',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 12
+                      )
                     )
-                  ],
+                  )
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Thứ 2',
+                      style: TextStyle(
+                          fontSize: 12
+                      )
+                    )
+                  )
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Thứ 3',
+                      style: TextStyle(
+                          fontSize: 12
+                      )
+                    )
+                  )
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Thứ 4',
+                      style: TextStyle(
+                          fontSize: 12
+                      )
+                    )
+                  )
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Thứ 5',
+                      style: TextStyle(
+                          fontSize: 12
+                      )
+                    )
+                  )
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Thứ 6',
+                      style: TextStyle(
+                          fontSize: 12
+                      )
+                    )
+                  )
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'Thứ 7',
+                      style: TextStyle(
+                          fontSize: 12
+                      )
+                    )
+                  )
+                ),
+              ],
+            ),
+
+            SizedBox(height: 8),
+
+            GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 7,
+              childAspectRatio: 1,
+              children: List.generate(
+                31,
+                    (index) => Center(
+                  child: Text(
+                    '${index + 1}',
+                    style: TextStyle(fontSize: 14),
+                  ),
                 ),
               ),
+            ),
 
-              Expanded(
-                child: Container(
-                  color: Colors.grey[200],
-                ),
-              )
-            ],
-          )
+
+          ],
+        ),
       ),
     );
   }
