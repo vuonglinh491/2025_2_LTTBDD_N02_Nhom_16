@@ -15,22 +15,13 @@ class CamXuc extends StatefulWidget {
 
 class _CamXucState extends State<CamXuc> {
 
-  bool dangClick = false;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
 
-      onTap: (){
-        setState(() {
-          dangClick = !dangClick;
-        });
-      },
-
       child: Container(
         decoration: BoxDecoration(
-          // color: Colors.blue[500],
-          color: dangClick ? Colors.orange : Colors.blue,
+          color: Colors.blue[500],
           borderRadius: BorderRadius.circular(12),
         ),
         padding: EdgeInsets.all(12),
