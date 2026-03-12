@@ -82,7 +82,16 @@ class _ScheduleState extends State<Schedule> {
 
                 IconButton(
                   icon: Icon(Icons.chevron_left),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      thang--;
+
+                      if(thang < 1){
+                        thang = 12;
+                        nam--;
+                      }
+                    });
+                  },
                 ),
 
                 Text(
@@ -95,7 +104,16 @@ class _ScheduleState extends State<Schedule> {
 
                 IconButton(
                   icon: Icon(Icons.chevron_right),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      thang++;
+
+                      if(thang >12){
+                        thang = 1;
+                        nam++;
+                      }
+                    });
+                  },
                 ),
 
               ],
