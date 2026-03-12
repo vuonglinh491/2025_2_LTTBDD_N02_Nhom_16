@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Schedule extends StatelessWidget {
+class Schedule extends StatefulWidget {
+
+  @override
+  State<Schedule> createState() => _ScheduleState();
+}
+
+class _ScheduleState extends State<Schedule> {
+
+  int ngayDuocChon = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -132,13 +140,36 @@ class Schedule extends StatelessWidget {
               crossAxisCount: 7,
               childAspectRatio: 1,
               children: List.generate(
-                31,
-                    (index) => Center(
-                  child: Text(
-                    '${index + 1}',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ),
+                31, (index) {
+                  bool dangDuocChon = ngayDuocChon == index;
+
+                  return GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        ngayDuocChon = index;
+                      });
+                    },
+
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+
+                      decoration: BoxDecoration(
+                        color: dangDuocChon ? Colors.blue : Colors.transparent,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+
+                      child: Center(
+                        child: Text(
+                        '${index+1}',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: dangDuocChon ? Colors.white : Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }
               ),
             ),
 
