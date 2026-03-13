@@ -178,7 +178,7 @@ class _HomeState extends State<Home> {
                           CamXuc(
                             camxuc: '🔥',
                             onTap: () {
-                              print("CÙng bắt tay vào học bài ngay nào");
+                              print("Cùng bắt tay vào học bài ngay nào");
                             },
                           ),
                           SizedBox(height: 8),
@@ -223,7 +223,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Các khóa học',
+                          'Cackhoahoc'.tr(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -241,31 +241,31 @@ class _HomeState extends State<Home> {
                         children: [
                           KhoaHoc(
                             BieuTuong: Icons.phone_android,
-                            TenKhoaHoc: 'Lập trình cho thiết bị di động',
+                            TenKhoaHoc: 'ltctbdd'.tr(),
                             SoBaiTap: 5,
                             MauSac: Colors.blueAccent,
                           ),
                           KhoaHoc(
                             BieuTuong: Icons.account_tree,
-                            TenKhoaHoc: 'Phân tích và thiết kế phần mềm',
+                            TenKhoaHoc: 'pttk'.tr(),
                             SoBaiTap: 56,
                             MauSac: Colors.deepPurple,
                           ),
                           KhoaHoc(
                             BieuTuong: Icons.touch_app,
-                            TenKhoaHoc: 'Giao diện người máy',
+                            TenKhoaHoc: 'gdnm'.tr(),
                             SoBaiTap: 12,
                             MauSac: Colors.orange,
                           ),
                           KhoaHoc(
                             BieuTuong: Icons.functions,
-                            TenKhoaHoc: 'Tối ưu hóa',
+                            TenKhoaHoc: 'tuh'.tr(),
                             SoBaiTap: 9,
                             MauSac: Colors.redAccent,
                           ),
                           KhoaHoc(
                             BieuTuong: Icons.menu_book,
-                            TenKhoaHoc: 'Tiếng anh 2',
+                            TenKhoaHoc: 'ta2'.tr(),
                             SoBaiTap: 5,
                             MauSac: Colors.teal,
                           ),
