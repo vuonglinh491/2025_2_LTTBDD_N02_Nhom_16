@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Schedule extends StatefulWidget {
 
@@ -13,14 +14,14 @@ class _ScheduleState extends State<Schedule> {
   int thang = 3;
   int nam = 2026;
 
-  List<Map<String, dynamic>> _danhSachSuKien = const [
+  List<Map<String, dynamic>> _danhSachSuKien = [
     // sự kiện 1: nộp bài tập môn phân tích thiết kế
     {
       'nam': 2026,
       'thang': 3,
       'ngay': 13,
       'gio': '23:59',
-      'tieuDe': "Nộp btl Phân tích thiết kế",
+      'tieuDe': "n1".tr(),
       'mauSac': Colors.green,
     },
     // sự kiện 2: làm bài tập giao diện người máy

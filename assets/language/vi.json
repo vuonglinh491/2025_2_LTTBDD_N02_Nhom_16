@@ -27,6 +27,18 @@
   "bd":"Bắt đầu",
   "td":"Tạm dừng",
   "tt":"Tiếp tục",
-  "huy":"Hủy"
+  "huy":"Hủy",
+
+  "bc1":"PTTK: Báo cáo",
+  "bc2":"LTDĐ: Báo cáo",
+  "bc3":"GDNM: Figma",
+  "bc4":"PTTK: Buổi bảo vệ báo cáo",
+  "bc5":"LTDĐ: Báo cáo bản cứng",
+  "bc6":"GDNM: Poster, báo cáo cuối kỳ",
+  "bc7":"Tối ưu hóa: Thi cuối kì",
+  "tb":"THÔNG BÁO",
+
+  "n1":"Nộp bài tập lớn Phân tích thiết kế",
+  "n2":""
 
 }

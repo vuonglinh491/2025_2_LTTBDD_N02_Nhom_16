@@ -27,6 +27,19 @@
   "bd":"Start",
   "td":"Stop",
   "tt":"Continue",
-  "huy":"Cancel"
+  "huy":"Cancel",
+
+  "bc1":"PTTK: Report",
+  "bc2":"LTDĐ: Report",
+  "bc3":"GDNM: Figma",
+  "bc4":"PTTK: The report presentation session",
+  "bc5":"LTDĐ: Hard copy report",
+  "bc6":"GDNM: Poster, end-of-term report",
+  "bc7":"Optimization: Final exam",
+  "tb":"Notification",
+
+  "n1":"Submit the major assignment on analysis and design",
+  "n2":""
+
 }
 

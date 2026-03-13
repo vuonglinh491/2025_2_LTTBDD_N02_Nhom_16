@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart'; // thư viện hỗ trợ ngôn ngữ
 
 // lớp đại diện cho một deadline (hạn chót)
 class HanChot {
-
   final String tieuDe;
   final String ngayHan;
   // hàm khởi tạo với tiêu đề và ngày hạn chót
@@ -11,38 +11,17 @@ class HanChot {
 
 // lớp hiển thị danh sách các deadline
 class TrangThongBao extends StatelessWidget {
-  const TrangThongBao({super.key});
+  TrangThongBao({super.key});
 
   // danh sách các deadline mẫu để hiển thị
-  final List<HanChot> _danhSachHanChot = const [
-    HanChot(
-      'PTTK: Báo cáo',
-      '13/3/2026 11:00 PM',
-    ),
-    HanChot(
-      'LTDĐ: Báo cáo',
-      '14/3/2026 11:00 PM',
-    ),
-    HanChot(
-      'GDNM: figma',
-      '13/3/2026 11:00 PM',
-    ),
-    HanChot(
-      'PTTK: Buổi bảo vệ báo cáo',
-      '16/3/2026 8:00 AM - 5:00 PM',
-    ),
-    HanChot(
-      'LTDĐ: Báo cáo bản cứng',
-      '18/3/2026 8:00 AM - 5:00 PM',
-    ),
-    HanChot(
-      'GDNM: Poster, báo cáo cuối kỳ',
-      '17/3/2026 8:00 AM - 5:00 PM',
-    ),
-    HanChot(
-      'Tối ưu hóa: Thi cuối kì',
-      '18/3/2026 6:30 PM - 8:00 PM',
-    ),
+  final List<HanChot> _danhSachHanChot = [
+    HanChot('bc1'.tr(), '13/3/2026 11:00 PM'),
+    HanChot('bc2'.tr(), '14/3/2026 11:00 PM'),
+    HanChot('bc3'.tr(), '13/3/2026 11:00 PM'),
+    HanChot('bc4'.tr(), '16/3/2026 8:00 AM - 5:00 PM'),
+    HanChot('bc5'.tr(), '18/3/2026 8:00 AM - 5:00 PM'),
+    HanChot('bc6', '17/3/2026 8:00 AM - 5:00 PM'),
+    HanChot('bc7', '18/3/2026 6:30 PM - 8:00 PM'),
   ];
 
   @override
@@ -50,11 +29,8 @@ class TrangThongBao extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'THÔNG BÁO',
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-          ),
+          'tb'.tr(),
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
         backgroundColor: Color(0xff3566D6),
       ),
