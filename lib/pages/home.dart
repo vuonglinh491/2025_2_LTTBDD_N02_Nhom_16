@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:student_study_planner_app/util/courses.dart';
 import 'package:student_study_planner_app/util/emoticon.dart';
 import 'package:student_study_planner_app/pages/notification.dart';
+import 'package:easy_localization/easy_localization.dart';// thư viện hỗ trợ ngôn ngữ
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi, Nguyễn Văn A!',
+                        'loi_chao'.tr(),
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 26,
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
                       ),
 
                       Text(
-                        '20 Feb,2026',
+                        'ngay_thang'.tr(),
                         style: TextStyle(
                             color: Colors.blue[200]
                         ),
@@ -98,7 +99,7 @@ class _HomeState extends State<Home> {
                     ),
 
                     Text(
-                      'Tìm kiếm...',
+                      'tim_kiem'.tr(),
                       style: TextStyle(
                         color: Colors.white,
                       ),
@@ -117,7 +118,7 @@ class _HomeState extends State<Home> {
 
                 children: [
                   Text(
-                    'Hôm nay bạn thấy thế nào?',
+                    'cau_hoi'.tr(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,

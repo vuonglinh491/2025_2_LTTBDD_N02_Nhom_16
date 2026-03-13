@@ -1,7 +1,11 @@
 {
- "home": "Trang chủ",
- "schedule": "Lịch học",
- "focus": "Tập trung",
- "tasks": "Nhiệm vụ",
- "settings": "Cài đặt"
+  "home": "Trang chủ",
+  "schedule": "Lịch học",
+  "focus": "Tập trung",
+  "tasks": "Nhiệm vụ",
+  "settings": "Cài đặt",
+  "loi_chao": "Xin chào, Halen!",
+  "ngay_thang": "14 tháng 3, 2026",
+  "tim_kiem": "Tìm kiếm...",
+  "cau_hoi": "Hôm nay bạn thấy thế nào?",
 }

@@ -1,7 +1,11 @@
 {
- "home": "Home",
- "schedule": "Schedule",
- "focus": "Focus",
- "tasks": "Tasks",
- "settings": "Settings"
+  "home": "Home",
+  "schedule": "Schedule",
+  "focus": "Focus",
+  "tasks": "Tasks",
+  "settings": "Settings",
+  "loi_chao": "Hi, Halen!",
+  "ngay_thang": "14 March, 2026",
+  "tim_kiem": "Search...",
+  "cau_hoi": "How are you today?"
 }
