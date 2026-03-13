@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:student_study_planner_app/pages/focuspage.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+import 'package:student_study_planner_app/pages/add.dart';
 import 'package:student_study_planner_app/pages/home.dart';
 import 'package:student_study_planner_app/pages/schedule.dart';
 import 'package:student_study_planner_app/pages/settings.dart';
 import 'package:student_study_planner_app/pages/tasks.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('vi'), Locale('en')],
+      path: 'assets/language', // thư mục chứa file ngôn ngữ
+      fallbackLocale: const Locale('vi'),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   static _MyAppState? of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>();
-
-  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -33,6 +45,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
+      // Dark / Light mode
       themeMode: _themeMode,
 
       theme: ThemeData(
@@ -47,6 +60,11 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.dark,
       ),
 
+      // Localization
+      locale: context.locale,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
+
       home: const TrangChu(),
     );
   }
@@ -60,30 +78,54 @@ class TrangChu extends StatefulWidget {
 }
 
 class _TrangChuState extends State<TrangChu> {
-  int _selectIndex = 0;
+  int _selectedIndex = 0;
 
   void _navigateBottomBar(int index) {
     setState(() {
-      _selectIndex = index;
+      _selectedIndex = index;
     });
   }
 
-  final List<Widget> _page = [Home(), Schedule(), FocusPage(), Tasks(), Settings()];
+  final List<Widget> _pages = const [
+    Home(),
+    Schedule(),
+    Add(),
+    Tasks(),
+    Settings(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _page[_selectIndex],
+      body: _pages[_selectedIndex],
+
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectIndex,
+        currentIndex: _selectedIndex,
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Lịch học'),
-          BottomNavigationBarItem(icon: Icon(Icons.local_fire_department), label: 'Tập trung'),
-          BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Nhiệm vụ'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),
+
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.home),
+            label: 'trang_chu'.tr(),
+          ),
+
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.calendar_today),
+            label: 'lich_hoc'.tr(),
+          ),
+
+          const BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
+
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.task),
+            label: 'nhiem_vu'.tr(),
+          ),
+
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.settings),
+            label: 'cai_dat'.tr(),
+          ),
         ],
       ),
     );
