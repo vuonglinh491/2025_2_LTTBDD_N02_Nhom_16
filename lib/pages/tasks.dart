@@ -2,35 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class Tasks extends StatelessWidget {
-   Tasks({super.key});
+  Tasks({super.key});
 
   // danh sách dữ liệu mẫu chứa các nhiệm vụ cần hoàn thành
   final List<Map<String, String>> _danhSachNhiemVu = [
     // nhiệm vụ 1:
-    {'tieuDe': 'nbth'.tr(),
-      'hanChot': '12/03/2026 23:59'},
+    {'tieuDe': 'nbth', 'hanChot': '12/03/2026 23:59'},
     // nhiệm vụ 2:
-    {'tieuDe': 'cbbtt'.tr(),
-      'hanChot': '15/03/2026 10:00'},
+    {'tieuDe': 'cbbtt', 'hanChot': '15/03/2026 10:00'},
     // nhiệm vụ 3:
-    {'tieuDe': 'msm'.tr(),
-      'hanChot': '18/03/2026 17:00'},
+    {'tieuDe': 'msm', 'hanChot': '18/03/2026 17:00'},
     // nhiệm vụ 4:
-    {'tieuDe': 'bctt'.tr(),
-      'hanChot': '20/03/2026 12:00'},
+    {'tieuDe': 'bctt', 'hanChot': '20/03/2026 12:00'},
     // nhiệm vụ 5:
-    {'tieuDe': 'dkmh'.tr(),
-      'hanChot': '25/03/2026 00:00'},
+    {'tieuDe': 'dkmh', 'hanChot': '25/03/2026 00:00'},
   ];
 
   @override
   Widget build(BuildContext nguCanhXayDung) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'tasks'.tr(),
-          style: TextStyle(color: Colors.white),
-        ),
+        title: Text('tasks'.tr(), style: TextStyle(color: Colors.white)),
         backgroundColor: const Color(0xff3566D6),
       ),
 
@@ -49,7 +41,7 @@ class Tasks extends StatelessWidget {
             leading: const Icon(Icons.task),
             // tiêu đề nhiệm vụ
             title: Text(
-              mucNhiemVu['tieuDe']!,
+              mucNhiemVu['tieuDe']!.tr(),
               style: const TextStyle(fontSize: 16),
             ),
             // phụ đề hiển thị hạn chót
