@@ -1,55 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+
 import 'package:student_study_planner_app/pages/focuspage.dart';
 import 'package:student_study_planner_app/pages/home.dart';
 import 'package:student_study_planner_app/pages/schedule.dart';
 import 'package:student_study_planner_app/pages/settings.dart';
 import 'package:student_study_planner_app/pages/tasks.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('vi'), Locale('en')],
+      path: 'assets/language',
+      fallbackLocale: const Locale('vi'),
+      child: const MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatefulWidget {
-  static _MyAppState? of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>();
-
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = ThemeMode.light;
-
-  void changeTheme(bool isDark) {
-    setState(() {
-      _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      themeMode: _themeMode,
+      locale: context.locale,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
 
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-        brightness: Brightness.light,
-      ),
-
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-        brightness: Brightness.dark,
-      ),
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
 
       home: const TrangChu(),
     );
   }
+
+  static of(BuildContext context) {}
 }
 
 class TrangChu extends StatefulWidget {
@@ -84,18 +74,27 @@ class _TrangChuState extends State<TrangChu> {
         currentIndex: _selectIndex,
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Lịch học',
+            icon: const Icon(Icons.home),
+            label: 'home'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_fire_department),
-            label: 'Tập trung',
+            icon: const Icon(Icons.calendar_today),
+            label: 'schedule'.tr(),
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Nhiệm vụ'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.local_fire_department),
+            label: 'focus'.tr(),
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.task),
+            label: 'tasks'.tr(),
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.settings),
+            label: 'settings'.tr(),
+          ),
         ],
       ),
     );

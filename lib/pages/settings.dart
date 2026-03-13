@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:student_study_planner_app/main.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -9,7 +10,6 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  bool isDarkMode = false;
   int hoverIndex = -1;
 
   @override
@@ -155,21 +155,35 @@ class _SettingsState extends State<Settings> {
                   children: [
                     _settingItem(Icons.person_outline, "Cài đặt chung"),
                     _settingItem(Icons.notifications_none, "Thông báo"),
-                    SwitchListTile(
-                      secondary: const CircleAvatar(
+                    ListTile(
+                      leading: const CircleAvatar(
                         backgroundColor: Color(0xffE6ECF8),
-                        child: Icon(Icons.dark_mode, color: Color(0xff3566D6)),
+                        child: Icon(Icons.language, color: Color(0xff3566D6)),
                       ),
-                      title: const Text("Chế độ tối"),
-                      value: isDarkMode,
-                      onChanged: (val) {
-                        setState(() {
-                          isDarkMode = val;
-                        });
-
-                        // Gọi đổi theme toàn app
-                        MyApp.of(context)?.changeTheme(val);
-                      },
+                      title: const Text("Ngôn ngữ"),
+                      subtitle: Text(
+                        context.locale.languageCode == 'vi'
+                            ? "Tiếng Việt"
+                            : "English",
+                      ),
+                      trailing: DropdownButton<String>(
+                        value: context.locale.languageCode,
+                        underline: const SizedBox(),
+                        items: const [
+                          DropdownMenuItem(
+                            value: 'vi',
+                            child: Text("Tiếng Việt"),
+                          ),
+                          DropdownMenuItem(value: 'en', child: Text("English")),
+                        ],
+                        onChanged: (value) {
+                          if (value == 'vi') {
+                            context.setLocale(const Locale('vi'));
+                          } else {
+                            context.setLocale(const Locale('en'));
+                          }
+                        },
+                      ),
                     ),
                   ],
                 ),
