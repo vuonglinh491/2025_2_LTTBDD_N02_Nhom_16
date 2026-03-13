@@ -34,12 +34,12 @@ class _SettingsState extends State<Settings> {
                   bottomRight: Radius.circular(30),
                 ),
               ),
-              child: const Row(
+              child: Row(
                 children: [
                   Icon(Icons.person_outline, color: Colors.white),
                   SizedBox(width: 12),
                   Text(
-                    "Cài đặt",
+                    "caidat".tr(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -63,7 +63,7 @@ class _SettingsState extends State<Settings> {
                 child: Column(
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         CircleAvatar(
                           radius: 35,
                           backgroundColor: Color(0xff3566D6),
@@ -77,15 +77,15 @@ class _SettingsState extends State<Settings> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Nguyễn Văn A",
+                              "nguyen".tr(),
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             SizedBox(height: 4),
-                            Text("Sinh viên"),
-                            Text("SV123456"),
+                            Text("sv".tr()),
+                            Text("msv".tr()),
                           ],
                         ),
                       ],
@@ -100,11 +100,11 @@ class _SettingsState extends State<Settings> {
                       ],
                     ),
                     const SizedBox(height: 12),
-                    const Row(
+                    Row(
                       children: [
                         Icon(Icons.menu_book_outlined),
                         SizedBox(width: 10),
-                        Text("Công nghệ Thông tin"),
+                        Text("cntt".tr()),
                       ],
                     ),
                     const SizedBox(height: 20),
@@ -114,7 +114,7 @@ class _SettingsState extends State<Settings> {
                       child: OutlinedButton.icon(
                         onPressed: () {},
                         icon: const Icon(Icons.edit),
-                        label: const Text("Chỉnh sửa hồ sơ"),
+                        label: Text("cshs".tr()),
                         style: OutlinedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           side: const BorderSide(color: Color(0xff3566D6)),
@@ -131,12 +131,12 @@ class _SettingsState extends State<Settings> {
 
             const SizedBox(height: 25),
 
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Cài đặt chung",
+                  "cdc".tr(),
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ),
@@ -153,14 +153,14 @@ class _SettingsState extends State<Settings> {
                 ),
                 child: Column(
                   children: [
-                    _settingItem(Icons.person_outline, "Cài đặt chung"),
-                    _settingItem(Icons.notifications_none, "Thông báo"),
+                    _settingItem(Icons.person_outline, "cdc".tr()),
+                    _settingItem(Icons.notifications_none, "tb".tr()),
                     ListTile(
                       leading: const CircleAvatar(
                         backgroundColor: Color(0xffE6ECF8),
                         child: Icon(Icons.language, color: Color(0xff3566D6)),
                       ),
-                      title: const Text("Ngôn ngữ"),
+                      title: Text("nn".tr()),
                       subtitle: Text(
                         context.locale.languageCode == 'vi'
                             ? "Tiếng Việt"
@@ -194,12 +194,12 @@ class _SettingsState extends State<Settings> {
 
             const SizedBox(height: 10),
 
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Thông tin nhà phát triển",
+                  "npt".tr(),
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ),
@@ -219,12 +219,12 @@ class _SettingsState extends State<Settings> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // sinh vien
-                    const Row(
+                     Row(
                       children: [
                         Icon(Icons.school_outlined, color: Color(0xff3566D6)),
                         SizedBox(width: 8),
                         Text(
-                          "Sinh viên",
+                          "sv".tr(),
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                       ],
@@ -232,32 +232,32 @@ class _SettingsState extends State<Settings> {
 
                     const SizedBox(height: 10),
 
-                    const Text(
-                      "Ngô Vương Linh",
+                    Text(
+                      "nvl".tr(),
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
-                    const Text(
-                      "Mã sinh viên: 23010496",
+                    Text(
+                      "masv".tr() + "23010496",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    const Text(
-                      "Nguyễn Kiều Trang",
+                    Text(
+                      "nkt".tr(),
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
-                    const Text(
-                      "Mã sinh viên: 23010495",
+                    Text(
+                      "masv".tr() + "23010495",
                       style: TextStyle(color: Colors.grey),
                     ),
 
                     const SizedBox(height: 20),
 
                     // giảng viên
-                    const Row(
+                    Row(
                       children: [
                         Icon(Icons.person_outline, color: Color(0xff3566D6)),
                         SizedBox(width: 8),
                         Text(
-                          "Giảng viên hướng dẫn",
+                          "gv".tr(),
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                       ],
@@ -265,8 +265,8 @@ class _SettingsState extends State<Settings> {
 
                     const SizedBox(height: 10),
 
-                    const Text(
-                      "Nguyễn Xuân Quế",
+                    Text(
+                      "nxq".tr(),
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                   ],
@@ -287,7 +287,7 @@ class _SettingsState extends State<Settings> {
                 child: Column(
                   children: [
                     Text(
-                      "Đánh giá ứng dụng",
+                      "dg".tr(),
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -295,7 +295,7 @@ class _SettingsState extends State<Settings> {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      "Cảm ơn bạn đã sử dụng Study Planner!",
+                      "camon".tr(),
                       style: TextStyle(color: Colors.grey),
                     ),
                     SizedBox(height: 15),

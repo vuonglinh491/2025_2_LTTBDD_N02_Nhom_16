@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Tasks extends StatelessWidget {
-  const Tasks({super.key});
+   Tasks({super.key});
 
   // danh sách dữ liệu mẫu chứa các nhiệm vụ cần hoàn thành
-  final List<Map<String, String>> _danhSachNhiemVu = const [
+  final List<Map<String, String>> _danhSachNhiemVu = [
     // nhiệm vụ 1:
-    {'tieuDe': 'Nộp bài toán học',
+    {'tieuDe': 'nbth'.tr(),
       'hanChot': '12/03/2026 23:59'},
     // nhiệm vụ 2:
-    {'tieuDe': 'Chuẩn bị bài thuyết trình',
+    {'tieuDe': 'cbbtt'.tr(),
       'hanChot': '15/03/2026 10:00'},
     // nhiệm vụ 3:
-    {'tieuDe': 'Mua sách mới',
+    {'tieuDe': 'msm'.tr(),
       'hanChot': '18/03/2026 17:00'},
     // nhiệm vụ 4:
-    {'tieuDe': 'Gửi báo cáo thực tập',
+    {'tieuDe': 'bctt'.tr(),
       'hanChot': '20/03/2026 12:00'},
     // nhiệm vụ 5:
-    {'tieuDe': 'Đăng ký môn học',
+    {'tieuDe': 'dkmh'.tr(),
       'hanChot': '25/03/2026 00:00'},
   ];
 
@@ -27,7 +28,7 @@ class Tasks extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'NHIỆM VỤ',
+          'tasks'.tr(),
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color(0xff3566D6),
@@ -53,7 +54,7 @@ class Tasks extends StatelessWidget {
             ),
             // phụ đề hiển thị hạn chót
             subtitle: Text(
-              '${'Hạn '}: ${mucNhiemVu['hanChot']}',
+              '${'han '.tr()}: ${mucNhiemVu['hanChot']}',
               style: const TextStyle(color: Colors.grey),
             ),
           );

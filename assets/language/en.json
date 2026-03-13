@@ -60,6 +60,23 @@
   "thu7": "Saturday",
   "ko":"No events",
   "lhoc": "Class schedule",
-  "thang":"month"
+  "thang":"month",
+
+  "caidat":"Settings",  
+  "nguyen":"Nguyen Van A",  
+  "sv":"Student",  
+  "msv":"Student ID 0001",  
+  "cntt":"Information Technology",  
+  "cshs":"Edit Profile",  
+  "cdc":"General Settings",  
+  "nn":"Language",  
+  "npt":"Developer Information",  
+  "nvl":"Ngo Vuong Linh",  
+  "nkt":"Nguyen Kieu Trang",  
+  "masv":"Student Code",  
+  "gv":"Guiding Lecturer",  
+  "nxq":"Nguyen Xuan Que",  
+  "dg":"App Review",  
+  "camon":"Thank you for using Study Planner!"
 }
 
