@@ -30,7 +30,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 13,
       'gio': '17:00',
-      'tieuDe': 'Nộp figma hci',
+      'tieuDe': 'n2'.tr(),
       'mauSac': Colors.grey,
     },
     // sự kiện 3: phòng tự học gdnm
@@ -39,7 +39,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 10,
       'gio': '9:00-11:00',
-      'tieuDe': 'HCI room3.t6-pth',
+      'tieuDe': 'n3'.tr(),
       'mauSac': Colors.orange,
     },
     // sự kiện 4: phòng tự học ltctbdđ
@@ -48,7 +48,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 10,
       'gio': '13:00-17:00',
-      'tieuDe': 'mobile room3.t6-pth',
+      'tieuDe': 'n4',
       'mauSac': Colors.blue,
     },
     // sự kiện 5: nộp báo cáo
@@ -57,7 +57,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 14,
       'gio': '23:59',
-      'tieuDe': 'Nộp btl mobile',
+      'tieuDe': 'n5'.tr(),
       'mauSac': Colors.red,
     },
     // sự kiện 6: ngày cá tháng tư
@@ -65,7 +65,7 @@ class _ScheduleState extends State<Schedule> {
       'nam': 2026,
       'thang': 4,
       'ngay': 1,
-      'gio': 'Cả ngày',
+      'gio': '24h',
       'tieuDe': 'Ngày Cá tháng Tư',
       'mauSac': Colors.pink,
     },
@@ -75,7 +75,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 11,
       'gio': '9:00-11:00',
-      'tieuDe': 'HCI room2.t6-pth',
+      'tieuDe': 'n7'.tr(),
       'mauSac': Colors.deepPurple,
     },
     // sự kiện 8: pth pttk
@@ -84,7 +84,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 11,
       'gio': '13:00-17:00',
-      'tieuDe': 'Phân tích thiết kế room2.t4',
+      'tieuDe': 'n8'.tr(),
       'mauSac': Colors.brown,
     },
     // sự kiện 9:
@@ -93,7 +93,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 12,
       'gio': '10:00-17:00',
-      'tieuDe': 'pth room3.t6',
+      'tieuDe': 'n9',
       'mauSac': Colors.teal,
     },
     // sự kiện 10:
@@ -102,7 +102,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 13,
       'gio': '10:00-12:00',
-      'tieuDe': 'figma HCI',
+      'tieuDe': 'n10'.tr(),
       'mauSac': Colors.cyan,
     },
     // sự kiện 11:
@@ -111,7 +111,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 13,
       'gio': '13:00-15:00',
-      'tieuDe': 'quay video pttk room2.t5',
+      'tieuDe': 'n11'.tr(),
       'mauSac': Colors.lime,
     },
     // sự kiện 12:
@@ -120,7 +120,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 13,
       'gio': '15:00-17:00',
-      'tieuDe': 'mobile room2.t6-pth',
+      'tieuDe': 'n12'.tr(),
       'mauSac': Colors.indigo,
     },
     // sự kiện 13: tập thể dục
@@ -129,7 +129,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 14,
       'gio': '9:30-17:00',
-      'tieuDe': 'mobile room2.t6-pth',
+      'tieuDe': 'n13'.tr(),
       'mauSac': Colors.lightGreen,
     },
   ];
@@ -229,7 +229,7 @@ class _ScheduleState extends State<Schedule> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Lịch học',
+          'lhoc'.tr(),
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -263,7 +263,7 @@ class _ScheduleState extends State<Schedule> {
                 ),
 
                 Text(
-                  'Tháng $thang $nam',
+                  'thang'.tr() + '$thang $nam',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -296,7 +296,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Chủ nhật',
+                      'chunhat'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -306,7 +306,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Thứ 2',
+                      'thu2'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -316,7 +316,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Thứ 3',
+                      'thu3'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -326,7 +326,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Thứ 4',
+                      'thu4'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -336,7 +336,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Thứ 5',
+                      'thu5'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -346,7 +346,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Thứ 6',
+                      'thu6'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -356,7 +356,7 @@ class _ScheduleState extends State<Schedule> {
                 Expanded(
                   child: Center(
                     child: Text(
-                      'Thứ 7',
+                      'thu7'.tr(),
                       style: TextStyle(
                           fontSize: 12
                       )
@@ -405,7 +405,7 @@ class _ScheduleState extends State<Schedule> {
                   if(suKienNgay.isEmpty){
                     return Center(
                       child: Text(
-                        'Không có sự kiện',
+                        'ko'.tr(),
                         style: TextStyle(color: Colors.grey),
                       ),
                     );

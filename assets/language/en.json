@@ -39,7 +39,27 @@
   "tb":"Notification",
 
   "n1":"Submit the major assignment on analysis and design",
-  "n2":""
-
+  "n2":"Submit Figma User Interface Robot",
+  "n3":"GDNM Self-Study Room",
+  "n4":"Self-study room LTCTBDĐ",
+  "n5":"Submit the large programming assignment for mobile devices.",
+  "n6":"April Fools' Day",
+  "n7":"GDNM Self-Study Room",
+  "n8":"PTTK Self-Study Room",
+  "n9":"Self-Study Room ",
+  "n10": "Figma User Interface",  
+  "n11": "Record video analyzing design",  
+  "n12": "Mobile programming",  
+  "n13": "Exercise",
+  "chunhat":"Sunday",
+  "thu2": "Monday",  
+  "thu3": "Tuesday",  
+  "thu4": "Wednesday",  
+  "thu5": "Thursday",  
+  "thu6": "Friday",  
+  "thu7": "Saturday",
+  "ko":"No events",
+  "lhoc": "Class schedule",
+  "thang":"month"
 }
 
