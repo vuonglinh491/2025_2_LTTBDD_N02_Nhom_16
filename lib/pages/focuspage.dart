@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class FocusPage extends StatefulWidget {
   const FocusPage({super.key});
@@ -44,7 +45,7 @@ class _FocusPageState extends State<FocusPage> {
                   },
                   children: List.generate(
                     30,
-                    (index) => Center(child: Text("$index ngày")),
+                    (index) => Center(child: Text("${"ngay".tr()}")),
                   ),
                 ),
               ),
@@ -61,7 +62,7 @@ class _FocusPageState extends State<FocusPage> {
                   },
                   children: List.generate(
                     24,
-                    (index) => Center(child: Text("$index giờ")),
+                    (index) => Center(child: Text("${"gio".tr()}")),
                   ),
                 ),
               ),
@@ -78,7 +79,7 @@ class _FocusPageState extends State<FocusPage> {
                   },
                   children: List.generate(
                     60,
-                    (index) => Center(child: Text("$index phút")),
+                    (index) => Center(child: Text("${"phut".tr()}")),
                   ),
                 ),
               ),
@@ -167,7 +168,7 @@ class _FocusPageState extends State<FocusPage> {
 
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: AppBar(title: const Text("Tập trung"), centerTitle: true),
+      appBar: AppBar(title: Text("Taptrung".tr()), centerTitle: true),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -215,19 +216,19 @@ class _FocusPageState extends State<FocusPage> {
               if (!isRunning && !isPaused)
                 ElevatedButton(
                   onPressed: startTimer,
-                  child: const Text("Bắt đầu"),
+                  child: Text("${"bd".tr()}"),
                 ),
 
               if (isRunning)
                 ElevatedButton(
                   onPressed: pauseTimer,
-                  child: const Text("Tạm dừng"),
+                  child: Text("${"td".tr()}"),
                 ),
 
               if (isPaused)
                 ElevatedButton(
                   onPressed: resumeTimer,
-                  child: const Text("Tiếp tục"),
+                  child: Text("${"tt".tr()}"),
                 ),
 
               const SizedBox(width: 20),
@@ -236,7 +237,7 @@ class _FocusPageState extends State<FocusPage> {
                 ElevatedButton(
                   onPressed: cancelTimer,
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text("Hủy"),
+                  child: Text("${"huy".tr()}"),
                 ),
             ],
           ),

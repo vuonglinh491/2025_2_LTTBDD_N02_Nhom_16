@@ -18,6 +18,15 @@
   "pttk":"Software design analysis",
   "gdnm":"Robot interface",
   "tuh":"Optimization",
-  "ta2":"English 2"
+  "ta2":"English 2",
+
+  "Taptrung":"Focus",
+  "ngay":"Day",
+  "gio":"Now",
+  "phut":"Minute",
+  "bd":"Start",
+  "td":"Stop",
+  "tt":"Continue",
+  "huy":"Cancel"
 }
 
