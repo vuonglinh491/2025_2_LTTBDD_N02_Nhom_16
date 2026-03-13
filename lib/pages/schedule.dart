@@ -145,19 +145,19 @@ class _ScheduleState extends State<Schedule> {
     for(int i = 0; i < thuNgayDau; i++){
       danhSachNgay.add(Container());
     }
+    DateTime homNay = DateTime.now();
 
     for(int ngay = 1; ngay <= soLuongNgay; ngay++){
 
       var suKienTrongNgay = _danhSachSuKien.where((suKien) =>
-      suKien['nam'] == nam &&
-          suKien['thang'] == thang &&
-          suKien['ngay'] == ngay
+        suKien['nam'] == nam &&
+        suKien['thang'] == thang &&
+        suKien['ngay'] == ngay
       ).toList();
 
       int index = ngay -1;
       bool dangDuocChon = ngayDuocChon == index;
 
-      DateTime homNay = DateTime.now();
       bool laHomNay =
         ngay == homNay.day &&
         thang == homNay.month &&
@@ -375,6 +375,59 @@ class _ScheduleState extends State<Schedule> {
               children: danhSachNgay,
             ),
 
+            // đường kẻ ngang
+            Divider(),
+
+            SizedBox(
+              height: 8
+            ),
+
+            Expanded(
+              child: Builder(
+                builder: (context){
+
+                  // xác định ngày được chọn, nếu =-1 thì mặc định dùng ngày hiện tại
+                  int ngayDangXem = ngayDuocChon == -1
+                      ? DateTime.now().day
+                      : ngayDuocChon + 1;
+
+                  // lọc ds sự kiện theo năm, tháng, ngày đang xem
+                  var suKienNgay = _danhSachSuKien.where((suKien) =>
+                    suKien['nam'] == nam &&
+                    suKien['thang'] == thang &&
+                    suKien['ngay'] == ngayDangXem
+                  ).toList();
+
+                  if(suKienNgay.isEmpty){
+                    return Center(
+                      child: Text(
+                        'Không có sự kiện',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    );
+                  }
+
+                  return ListView.builder(
+                    itemCount: suKienNgay.length,
+                    itemBuilder: (context,index){
+
+
+                      var suKien = suKienNgay[index];
+
+                      return ListTile(
+                        leading: Icon(
+                          Icons.circle,
+                          size: 12,
+                          color: suKien['mauSac'],
+                        ),
+                        title: Text(suKien['tieuDe']),
+                        subtitle: Text(suKien['gio']),
+                      );
+                    },
+                  );
+                },
+              ),
+            )
 
           ],
         ),
