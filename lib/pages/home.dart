@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:student_study_planner_app/util/courses.dart';
 import 'package:student_study_planner_app/util/emoticon.dart';
+import 'package:student_study_planner_app/pages/notification.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -52,15 +53,24 @@ class _HomeState extends State<Home> {
                   ),
 
                   //a12 cột thông báo
-                  Container(
-                    decoration: BoxDecoration(
+                  InkWell(
+                    onTap: () {
+                      // Xử lý sự kiện khi nhấn vào biểu tượng thông báo
+                      // Ví dụ: Điều hướng đến trang thông báo
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TrangThongBao(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
                         color: Colors.blue[600],
-                        borderRadius: BorderRadius.circular(12)
-                    ),
-                    padding: EdgeInsets.all(12),
-                    child: Icon(
-                      Icons.notifications,
-                      color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      padding: EdgeInsets.all(12),
+                      child: Icon(Icons.notifications, color: Colors.white),
                     ),
                   ),
                 ],),
