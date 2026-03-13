@@ -231,8 +231,10 @@ class _ScheduleState extends State<Schedule> {
           'Lịch học',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.bold,
           )
         ),
+        centerTitle: true,
         backgroundColor: Color(0xff3566D6),
 
       ),
@@ -262,8 +264,9 @@ class _ScheduleState extends State<Schedule> {
                 Text(
                   'Tháng $thang $nam',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 ),
 
