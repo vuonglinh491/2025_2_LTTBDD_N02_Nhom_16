@@ -143,6 +143,9 @@ class _HomeState extends State<Home> {
                     children: [
                       CamXuc(
                         camxuc: '😴',
+                        onTap: () {
+                          print("Hãy nghỉ ngơi rồi bắt đầu nhé");
+                        },
                       ),
                       SizedBox(
                         height: 8,
@@ -161,6 +164,9 @@ class _HomeState extends State<Home> {
                     children: [
                       CamXuc(
                         camxuc: '😣',
+                        onTap: () {
+                          print("Hít một hơi thật sâu rồi bắt đầu nhé");
+                        },
                       ),
                       SizedBox(
                         height: 8,
@@ -179,6 +185,9 @@ class _HomeState extends State<Home> {
                     children: [
                       CamXuc(
                         camxuc: '😐',
+                        onTap: () {
+                          print("Chúc bạn sớm hoàn thành nhiệm vụ");
+                        },
                       ),
                       SizedBox(
                         height: 8,
@@ -197,6 +206,9 @@ class _HomeState extends State<Home> {
                     children: [
                       CamXuc(
                         camxuc: '🔥',
+                        onTap: () {
+                          print("CÙng bắt tay vào học bài ngay nào");
+                        },
                       ),
                       SizedBox(
                         height: 8,
@@ -215,6 +227,9 @@ class _HomeState extends State<Home> {
                     children: [
                       CamXuc(
                         camxuc: '💪',
+                        onTap: () {
+                          print("Sẵn sàng cho các nhiệm vụ mới nào");
+                        },
                       ),
                       SizedBox(
                         height: 8,

@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CamXuc extends StatefulWidget {
+class CamXuc extends StatelessWidget {
 
   final String camxuc;
+  //hàm sự kiện khi người dùng bấm vào icon
+  final VoidCallback ? onTap;
 
   const CamXuc({
     Key? key,
     required this.camxuc,
+    this.onTap,
   }) : super(key: key);
-
-  @override
-  State<CamXuc> createState() => _CamXucState();
-}
-
-class _CamXucState extends State<CamXuc> {
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.blue[500],
@@ -26,7 +23,7 @@ class _CamXucState extends State<CamXuc> {
         ),
         padding: EdgeInsets.all(12),
         child: Text(
-          widget.camxuc,
+          camxuc,
           style: TextStyle(
             fontSize: 30,
           ),
