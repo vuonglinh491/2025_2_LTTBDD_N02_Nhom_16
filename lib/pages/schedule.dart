@@ -22,7 +22,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '23:59',
       'tieuDe': "n1".tr(),
-      'mauSac': Colors.green,
+      'mauSac': Colors.lightGreenAccent,
     },
     // sự kiện 2: làm bài tập giao diện người máy
     {
@@ -31,7 +31,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '17:00',
       'tieuDe': 'n2'.tr(),
-      'mauSac': Colors.grey,
+      'mauSac': Colors.amber,
     },
     // sự kiện 3: phòng tự học gdnm
     {
@@ -40,7 +40,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 10,
       'gio': '9:00-11:00',
       'tieuDe': 'n3'.tr(),
-      'mauSac': Colors.orange,
+      'mauSac': Colors.pinkAccent,
     },
     // sự kiện 4: phòng tự học ltctbdđ
     {
@@ -49,7 +49,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 10,
       'gio': '13:00-17:00',
       'tieuDe': 'n4',
-      'mauSac': Colors.blue,
+      'mauSac': Colors.purpleAccent,
     },
     // sự kiện 5: nộp báo cáo
     {
@@ -67,7 +67,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 1,
       'gio': '24h',
       'tieuDe': 'Ngày Cá tháng Tư',
-      'mauSac': Colors.pink,
+      'mauSac': Colors.greenAccent,
     },
     // sự kiện 7: pth gdnm
     {
@@ -76,7 +76,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 11,
       'gio': '9:00-11:00',
       'tieuDe': 'n7'.tr(),
-      'mauSac': Colors.deepPurple,
+      'mauSac': Colors.tealAccent,
     },
     // sự kiện 8: pth pttk
     {
@@ -85,7 +85,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 11,
       'gio': '13:00-17:00',
       'tieuDe': 'n8'.tr(),
-      'mauSac': Colors.brown,
+      'mauSac': Colors.limeAccent,
     },
     // sự kiện 9:
     {
@@ -94,7 +94,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 12,
       'gio': '10:00-17:00',
       'tieuDe': 'n9',
-      'mauSac': Colors.teal,
+      'mauSac': Colors.amber,
     },
     // sự kiện 10:
     {
@@ -103,7 +103,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '10:00-12:00',
       'tieuDe': 'n10'.tr(),
-      'mauSac': Colors.cyan,
+      'mauSac': Colors.greenAccent,
     },
     // sự kiện 11:
     {
@@ -121,7 +121,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '15:00-17:00',
       'tieuDe': 'n12'.tr(),
-      'mauSac': Colors.indigo,
+      'mauSac': Colors.lightBlueAccent,
     },
     // sự kiện 13: tập thể dục
     {
@@ -130,7 +130,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 14,
       'gio': '9:30-17:00',
       'tieuDe': 'n13'.tr(),
-      'mauSac': Colors.lightGreen,
+      'mauSac': Colors.deepOrangeAccent,
     },
   ];
 
