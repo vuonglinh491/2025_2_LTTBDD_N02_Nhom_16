@@ -22,7 +22,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '23:59',
       'tieuDe': "n1".tr(),
-      'mauSac': Colors.green,
+      'mauSac': Colors.lightGreenAccent,
     },
     // sự kiện 2: làm bài tập giao diện người máy
     {
@@ -31,7 +31,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '17:00',
       'tieuDe': 'n2'.tr(),
-      'mauSac': Colors.grey,
+      'mauSac': Colors.amber,
     },
     // sự kiện 3: phòng tự học gdnm
     {
@@ -40,22 +40,22 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 10,
       'gio': '9:00-11:00',
       'tieuDe': 'n3'.tr(),
-      'mauSac': Colors.orange,
+      'mauSac': Colors.pinkAccent,
     },
     // sự kiện 4: phòng tự học ltctbdđ
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 10,
+      'ngay': 11,
       'gio': '13:00-17:00',
       'tieuDe': 'n4',
-      'mauSac': Colors.blue,
+      'mauSac': Colors.purpleAccent,
     },
     // sự kiện 5: nộp báo cáo
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 14,
+      'ngay': 15,
       'gio': '23:59',
       'tieuDe': 'n5'.tr(),
       'mauSac': Colors.red,
@@ -67,25 +67,25 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 1,
       'gio': '24h',
       'tieuDe': 'Ngày Cá tháng Tư',
-      'mauSac': Colors.pink,
+      'mauSac': Colors.greenAccent,
     },
     // sự kiện 7: pth gdnm
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 11,
+      'ngay': 15,
       'gio': '9:00-11:00',
       'tieuDe': 'n7'.tr(),
-      'mauSac': Colors.deepPurple,
+      'mauSac': Colors.tealAccent,
     },
     // sự kiện 8: pth pttk
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 11,
+      'ngay': 16,
       'gio': '13:00-17:00',
       'tieuDe': 'n8'.tr(),
-      'mauSac': Colors.brown,
+      'mauSac': Colors.limeAccent,
     },
     // sự kiện 9:
     {
@@ -94,7 +94,7 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 12,
       'gio': '10:00-17:00',
       'tieuDe': 'n9',
-      'mauSac': Colors.teal,
+      'mauSac': Colors.amber,
     },
     // sự kiện 10:
     {
@@ -103,13 +103,13 @@ class _ScheduleState extends State<Schedule> {
       'ngay': 13,
       'gio': '10:00-12:00',
       'tieuDe': 'n10'.tr(),
-      'mauSac': Colors.cyan,
+      'mauSac': Colors.greenAccent,
     },
     // sự kiện 11:
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 13,
+      'ngay': 14,
       'gio': '13:00-15:00',
       'tieuDe': 'n11'.tr(),
       'mauSac': Colors.lime,
@@ -118,19 +118,19 @@ class _ScheduleState extends State<Schedule> {
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 13,
+      'ngay': 10,
       'gio': '15:00-17:00',
       'tieuDe': 'n12'.tr(),
-      'mauSac': Colors.indigo,
+      'mauSac': Colors.lightBlueAccent,
     },
     // sự kiện 13: tập thể dục
     {
       'nam': 2026,
       'thang': 3,
-      'ngay': 14,
+      'ngay': 17,
       'gio': '9:30-17:00',
       'tieuDe': 'n13'.tr(),
-      'mauSac': Colors.lightGreen,
+      'mauSac': Colors.deepOrangeAccent,
     },
   ];
 
@@ -412,20 +412,43 @@ class _ScheduleState extends State<Schedule> {
                   }
 
                   return ListView.builder(
+                    //số sự kiện trong ngày
                     itemCount: suKienNgay.length,
                     itemBuilder: (context,index){
-
-
+                      //lấy sự kiện theo vị trí trong danh sách
                       var suKien = suKienNgay[index];
 
-                      return ListTile(
-                        leading: Icon(
-                          Icons.circle,
-                          size: 12,
-                          color: suKien['mauSac'],
+                      return Container(
+                        margin: EdgeInsets.symmetric(vertical: 6),
+
+                        decoration: BoxDecoration(
+                          color: suKien['mauSac'].withOpacity(0.15), // làm màu nền nhạt
+                          borderRadius: BorderRadius.circular(10),
+
+                          //tạo khung có màu viền theo màu của sự kiện
+                          border: Border.all(
+                            color: suKien['mauSac'],
+                            width: 1.5,
+                          ),
                         ),
-                        title: Text(suKien['tieuDe']),
-                        subtitle: Text(suKien['gio']),
+
+                        //đoạn nd của sự kiện ban đầu làm
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.circle,
+                            size: 12,
+                            color: suKien['mauSac'],
+                          ),
+
+                          title: Text(
+                            suKien['tieuDe'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          subtitle: Text(suKien['gio']),
+                        ),
                       );
                     },
                   );
