@@ -48,7 +48,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 11,
       'gio': '13:00-17:00',
-      'tieuDe': 'n4',
+      'tieuDe': 'n4'.tr(),
       'mauSac': Colors.purpleAccent,
     },
     // sự kiện 5: nộp báo cáo
@@ -65,8 +65,8 @@ class _ScheduleState extends State<Schedule> {
       'nam': 2026,
       'thang': 4,
       'ngay': 1,
-      'gio': '24h',
-      'tieuDe': 'Ngày Cá tháng Tư',
+      'gio': '23:59',
+      'tieuDe': 'n6'.tr(),
       'mauSac': Colors.greenAccent,
     },
     // sự kiện 7: pth gdnm
@@ -93,7 +93,7 @@ class _ScheduleState extends State<Schedule> {
       'thang': 3,
       'ngay': 12,
       'gio': '10:00-17:00',
-      'tieuDe': 'n9',
+      'tieuDe': 'n9'.tr(),
       'mauSac': Colors.amber,
     },
     // sự kiện 10:
