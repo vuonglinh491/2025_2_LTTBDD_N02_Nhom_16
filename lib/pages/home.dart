@@ -12,6 +12,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int camXucDuocChon = -1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,8 +129,12 @@ class _HomeState extends State<Home> {
                         children: [
                           CamXuc(
                             camxuc: '😴',
+                            duocChon: camXucDuocChon == 0,
                             onTap: () {
                               print("Hãy nghỉ ngơi rồi bắt đầu nhé");
+                              setState(() {
+                                camXucDuocChon = 0;
+                              });
                             },
                           ),
                           SizedBox(height: 8),
@@ -143,8 +150,12 @@ class _HomeState extends State<Home> {
                         children: [
                           CamXuc(
                             camxuc: '😣',
+                            duocChon: camXucDuocChon == 1,
                             onTap: () {
                               print("Hít một hơi thật sâu rồi bắt đầu nhé");
+                              setState(() {
+                                camXucDuocChon = 1;
+                              });
                             },
                           ),
                           SizedBox(height: 8),
@@ -160,8 +171,12 @@ class _HomeState extends State<Home> {
                         children: [
                           CamXuc(
                             camxuc: '😐',
+                            duocChon: camXucDuocChon == 2,
                             onTap: () {
                               print("Chúc bạn sớm hoàn thành nhiệm vụ");
+                              setState(() {
+                                camXucDuocChon = 2;
+                              });
                             },
                           ),
                           SizedBox(height: 8),
@@ -177,8 +192,12 @@ class _HomeState extends State<Home> {
                         children: [
                           CamXuc(
                             camxuc: '🔥',
+                            duocChon: camXucDuocChon == 3,
                             onTap: () {
                               print("Cùng bắt tay vào học bài ngay nào");
+                              setState(() {
+                                camXucDuocChon = 3;
+                              });
                             },
                           ),
                           SizedBox(height: 8),
@@ -194,8 +213,12 @@ class _HomeState extends State<Home> {
                         children: [
                           CamXuc(
                             camxuc: '💪',
+                            duocChon: camXucDuocChon == 4,
                             onTap: () {
                               print("Sẵn sàng cho các nhiệm vụ mới nào");
+                              setState(() {
+                                camXucDuocChon = 4;
+                              });
                             },
                           ),
                           SizedBox(height: 8),
