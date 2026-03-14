@@ -29,13 +29,6 @@
   "tt":"Tiếp tục",
   "huy":"Hủy",
 
-  "bc1":"PTTK: Báo cáo",
-  "bc2":"LTDĐ: Báo cáo",
-  "bc3":"GDNM: Figma",
-  "bc4":"PTTK: Buổi bảo vệ báo cáo",
-  "bc5":"LTDĐ: Báo cáo bản cứng",
-  "bc6":"GDNM: Poster, báo cáo cuối kỳ",
-  "bc7":"Tối ưu hóa: Thi cuối kì",
   "tb":"Thông báo",
 
   "n1":"Nộp bài tập lớn Phân tích thiết kế",
@@ -51,7 +44,7 @@
   "n11":"Quay video phân tích thiết kế",
   "n12":"Lập trình di động",
   "n13":"Tập thể dục",
-  "chunhat":"Chủ Nhật",
+  "chunhat":"CN",
   "thu2":"Thứ 2",
   "thu3":"Thứ 3",
   "thu4":"Thứ 4",
