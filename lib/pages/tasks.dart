@@ -22,7 +22,13 @@ class Tasks extends StatelessWidget {
   Widget build(BuildContext nguCanhXayDung) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('tasks'.tr(), style: TextStyle(color: Colors.white)),
+        title: Text(
+          'tasks'.tr(),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          )
+        ),
         backgroundColor: const Color(0xff3566D6),
         centerTitle: true,
       ),
@@ -47,7 +53,7 @@ class Tasks extends StatelessWidget {
             ),
             // phụ đề hiển thị hạn chót
             subtitle: Text(
-              '${'han '.tr()}: ${mucNhiemVu['hanChot']}',
+              '${'han'.tr()}: ${mucNhiemVu['hanChot']}',
               style: const TextStyle(color: Colors.grey),
             ),
           );
