@@ -20,8 +20,8 @@ class TrangThongBao extends StatelessWidget {
     HanChot('bc3'.tr(), '13/3/2026 11:00 PM'),
     HanChot('bc4'.tr(), '16/3/2026 8:00 AM - 5:00 PM'),
     HanChot('bc5'.tr(), '18/3/2026 8:00 AM - 5:00 PM'),
-    HanChot('bc6', '17/3/2026 8:00 AM - 5:00 PM'),
-    HanChot('bc7', '18/3/2026 6:30 PM - 8:00 PM'),
+    HanChot('bc6'.tr(), '17/3/2026 8:00 AM - 5:00 PM'),
+    HanChot('bc7'.tr(), '18/3/2026 6:30 PM - 8:00 PM'),
   ];
 
   @override

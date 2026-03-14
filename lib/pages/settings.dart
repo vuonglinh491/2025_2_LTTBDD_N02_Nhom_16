@@ -154,7 +154,6 @@ class _SettingsState extends State<Settings> {
                 child: Column(
                   children: [
                     _settingItem(Icons.person_outline, "cdc".tr()),
-                    _settingItem(Icons.notifications_none, "tb".tr()),
                     ListTile(
                       leading: const CircleAvatar(
                         backgroundColor: Color(0xffE6ECF8),
