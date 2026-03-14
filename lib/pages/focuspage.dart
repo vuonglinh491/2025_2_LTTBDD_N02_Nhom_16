@@ -45,7 +45,7 @@ class _FocusPageState extends State<FocusPage> {
                   },
                   children: List.generate(
                     30,
-                    (index) => Center(child: Text("${"ngay".tr()}")),
+                    (index) => Center(child: Text("$index${"ngay".tr()}")),
                   ),
                 ),
               ),
@@ -62,7 +62,7 @@ class _FocusPageState extends State<FocusPage> {
                   },
                   children: List.generate(
                     24,
-                    (index) => Center(child: Text("${"gio".tr()}")),
+                    (index) => Center(child: Text("$index${"gio".tr()}")),
                   ),
                 ),
               ),
@@ -79,7 +79,7 @@ class _FocusPageState extends State<FocusPage> {
                   },
                   children: List.generate(
                     60,
-                    (index) => Center(child: Text("${"phut".tr()}")),
+                    (index) => Center(child: Text("$index ${"phut".tr()}")),
                   ),
                 ),
               ),
@@ -91,10 +91,12 @@ class _FocusPageState extends State<FocusPage> {
       int seconds =
           (selectedDay * 86400) + (selectedHour * 3600) + (selectedMinute * 60);
 
-      setState(() {
-        totalSeconds = seconds;
-        remainingSeconds = seconds;
-      });
+      if (seconds > 0) {
+        setState(() {
+          totalSeconds = seconds;
+          remainingSeconds = seconds;
+        });
+      }
     });
   }
 
@@ -164,10 +166,17 @@ class _FocusPageState extends State<FocusPage> {
 
   @override
   Widget build(BuildContext context) {
-    double progress = remainingSeconds / totalSeconds;
+    double progress = totalSeconds == 0 ? 0 : remainingSeconds / totalSeconds;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Taptrung".tr()), centerTitle: true),
+      appBar: AppBar(
+        title: Text(
+          "Taptrung".tr(),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xff3566D6),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

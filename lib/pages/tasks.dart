@@ -24,6 +24,7 @@ class Tasks extends StatelessWidget {
       appBar: AppBar(
         title: Text('tasks'.tr(), style: TextStyle(color: Colors.white)),
         backgroundColor: const Color(0xff3566D6),
+        centerTitle: true,
       ),
 
       // list ds nhiệm vụ
