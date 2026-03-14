@@ -167,81 +167,90 @@ class _FocusPageState extends State<FocusPage> {
     double progress = remainingSeconds / totalSeconds;
 
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       appBar: AppBar(title: Text("Taptrung".tr()), centerTitle: true),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          /// TIMER CIRCLE
-          Center(
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  width: 250,
-                  height: 250,
-                  child: CircularProgressIndicator(
-                    value: progress,
-                    strokeWidth: 10,
-                    backgroundColor: Colors.blue[100],
-                    color: Colors.blue,
-                  ),
-                ),
-
-                /// TAP TO CHANGE TIME
-                GestureDetector(
-                  onTap: () {
-                    if (!isRunning) {
-                      openTimePicker();
-                    }
-                  },
-                  child: Text(
-                    formatTime(remainingSeconds),
-                    style: const TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/language/imgs/image.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            /// TIMER CIRCLE
+            Center(
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    width: 250,
+                    height: 250,
+                    child: CircularProgressIndicator(
+                      value: progress,
+                      strokeWidth: 10,
+                      backgroundColor: Colors.blue[100],
+                      color: Colors.blue,
                     ),
                   ),
-                ),
+
+                  /// TAP TO CHANGE TIME
+                  GestureDetector(
+                    onTap: () {
+                      if (!isRunning) {
+                        openTimePicker();
+                      }
+                    },
+                    child: Text(
+                      formatTime(remainingSeconds),
+                      style: const TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            /// BUTTONS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (!isRunning && !isPaused)
+                  ElevatedButton(
+                    onPressed: startTimer,
+                    child: Text("${"bd".tr()}"),
+                  ),
+
+                if (isRunning)
+                  ElevatedButton(
+                    onPressed: pauseTimer,
+                    child: Text("${"td".tr()}"),
+                  ),
+
+                if (isPaused)
+                  ElevatedButton(
+                    onPressed: resumeTimer,
+                    child: Text("${"tt".tr()}"),
+                  ),
+
+                const SizedBox(width: 20),
+
+                if (isRunning || isPaused)
+                  ElevatedButton(
+                    onPressed: cancelTimer,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                    ),
+                    child: Text("${"huy".tr()}"),
+                  ),
               ],
             ),
-          ),
-
-          const SizedBox(height: 40),
-
-          /// BUTTONS
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (!isRunning && !isPaused)
-                ElevatedButton(
-                  onPressed: startTimer,
-                  child: Text("${"bd".tr()}"),
-                ),
-
-              if (isRunning)
-                ElevatedButton(
-                  onPressed: pauseTimer,
-                  child: Text("${"td".tr()}"),
-                ),
-
-              if (isPaused)
-                ElevatedButton(
-                  onPressed: resumeTimer,
-                  child: Text("${"tt".tr()}"),
-                ),
-
-              const SizedBox(width: 20),
-
-              if (isRunning || isPaused)
-                ElevatedButton(
-                  onPressed: cancelTimer,
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: Text("${"huy".tr()}"),
-                ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
