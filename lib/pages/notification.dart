@@ -15,13 +15,18 @@ class TrangThongBao extends StatelessWidget {
 
   // danh sách các deadline mẫu để hiển thị
   final List<HanChot> _danhSachHanChot = [
-    HanChot('bc1'.tr(), '13/3/2026 11:00 PM'),
-    HanChot('bc2'.tr(), '14/3/2026 11:00 PM'),
-    HanChot('bc3'.tr(), '13/3/2026 11:00 PM'),
-    HanChot('bc4'.tr(), '16/3/2026 8:00 AM - 5:00 PM'),
-    HanChot('bc5'.tr(), '18/3/2026 8:00 AM - 5:00 PM'),
-    HanChot('bc6', '17/3/2026 8:00 AM - 5:00 PM'),
-    HanChot('bc7', '18/3/2026 6:30 PM - 8:00 PM'),
+    HanChot('n1'.tr(), '13/3/2026 23:59'),
+    HanChot('n2'.tr(), '13/3/2026 17:00'),
+    HanChot('n3'.tr(), '10/3/2026 9:00-11:00'),
+    HanChot('n4'.tr(), '11/3/2026 13:00-17:00'),
+    HanChot('n5'.tr(), '15/3/2026 23:59'),
+    HanChot('n7'.tr(), '15/3/2026 9:00-11:00'),
+    HanChot('n8'.tr(), '16/3/2026 13:00-17:00'),
+    HanChot('n9'.tr(), '12/3/2026 10:00-17:00'),
+    HanChot('n10'.tr(), '13/3/2026 10:00-12:00'),
+    HanChot('n11'.tr(), '14/3/2026 13:00-15:00'),
+    HanChot('n12'.tr(), '10/3/2026 15:00-17:00'),
+    HanChot('n13'.tr(), '17/3/2026 9:30-17:00'),
   ];
 
   @override
