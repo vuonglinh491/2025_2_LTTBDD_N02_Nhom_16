@@ -167,7 +167,17 @@ class _FocusPageState extends State<FocusPage> {
     double progress = remainingSeconds / totalSeconds;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Taptrung".tr()), centerTitle: true),
+      appBar: AppBar(
+        title: Text(
+          "Taptrung".tr(),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          )
+        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xff3566D6),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

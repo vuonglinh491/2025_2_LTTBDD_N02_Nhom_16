@@ -35,6 +35,7 @@ class _SettingsState extends State<Settings> {
                 ),
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.person_outline, color: Colors.white),
                   SizedBox(width: 12),
